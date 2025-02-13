@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Channel</title>
+    <script>
+        // Firebase configuration from environment variables
+        const firebaseConfig = {
+            apiKey: "<%= firebaseConfig.apiKey %>",
+            authDomain: "<%= firebaseConfig.authDomain %>",
+            projectId: "<%= firebaseConfig.projectId %>",
+            storageBucket: "<%= firebaseConfig.storageBucket %>",
+            messagingSenderId: "<%= firebaseConfig.messagingSenderId %>",
+            appId: "<%= firebaseConfig.appId %>"
+        };
+        const firebaseValidKey = "<%= firebaseConfig.firebaseValidKey %>"
+    </script>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <button class="button">Profile</button>
+            <a href="<%= channelLink %>">
+                <button class="button">Channel</button>
+            </a>
+        </div>
+
+        <div class="logo-section">
+            <h1 class="heading" id="heading">
+                <%= headingText %>
+            </h1>
+            <div class="profile-pic">
+                <img alt="" id="channelImageOnClient" src="<%= channelImage %>" />
+            </div>
+        </div>
+
+        <!-- Telegram Widget -->
+        <div style="height: 60vh; overflow-y: scroll;">
+            <div class="telegram-container widget-area"></div>
+        </div>
+
+        <div style="display: flex; justify-content: center; width: 100%; margin-top: 2rem;">
+            <button class="button">Profile</button>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-messaging-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore-compat.js"></script>
+    <script src="/script.js"></script>
+</body>
+
+</html>
