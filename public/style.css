@@ -11,6 +11,7 @@ body {
     max-width: 500px;
     margin: 0 auto;
     padding: 20px;
+    background-color: #0f0f0f;
 }
 
 .header {
@@ -146,4 +147,72 @@ img {
 
 a {
     font-size: 12px;
+}
+
+
+/* ////////////////////////// */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0f0f0f;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-image: url('https://i.ibb.co/QjTYQCbk/image.png');
+}
+
+.channel-preview {
+    width: 100%;
+    max-width: 360px;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 16px;
+}
+
+.channel-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.subscriber-count {
+    color: #8e8e8e;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.status-message {
+    color: #fff;
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.telegram-button {
+    display: inline-block;
+    background-color: #2AABEE;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 16px 0;
+    transition: background-color 0.2s;
+}
+
+.telegram-button:hover {
+    background-color: #229ED9;
+}
+
+.preview-text {
+    color: #8e8e8e;
+    font-size: 14px;
 }

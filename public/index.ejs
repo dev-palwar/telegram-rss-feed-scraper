@@ -21,9 +21,9 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="container">
         <div class="header">
-            <button class="button">Profile</button>
+            <button class="button">Order</button>
             <a href="<%= channelLink %>">
                 <button class="button">Channel</button>
             </a>
@@ -44,8 +44,19 @@
         </div>
 
         <div style="display: flex; justify-content: center; width: 100%; margin-top: 2rem;">
-            <button class="button">Profile</button>
+            <button class="button">Whatsapp</button>
         </div>
+    </div>
+
+    <div class="channel-preview" id="fallback" style="display: none;">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-460zRECuX9D15WGKzCKHwBhbmLpguu.png"
+            alt="Channel Profile" class="profile-image">
+        <div class="channel-name">🎒 PluggysHood 🎒</div>
+        <div class="subscriber-count">23 subscribers</div>
+        <div class="status-message">Kanal ist noch in Arbeit 🚨</div>
+        <div class="status-message">Channel is still in Progress 🚨</div>
+        <a href="#" class="telegram-button">VIEW IN TELEGRAM</a>
+        <div class="preview-text">Preview channel</div>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app-compat.js"></script>

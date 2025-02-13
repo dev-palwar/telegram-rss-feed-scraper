@@ -3,8 +3,6 @@ const db = firebase.firestore();
 const messaging = firebase.messaging();
 
 let channelName = "";
-// const firebaseValidKey =
-//   "BFDu6aXRrMkzryqU32Yb3pOuS_LXnODPnavFE-nQZbui05EpNHPDiudE4K6HFx7jV4Wexy7ohJfpWNMlr2M5wCo";
 
 // Register service worker
 if ("serviceWorker" in navigator) {
@@ -69,7 +67,9 @@ const fetchPosts = async () => {
   log(`Checking for new posts in channel: ${channelName}`);
 
   try {
-    const response = await fetch(`/api/rss?channel=thisonejsbot`);
+    const response = await fetch(
+      `/api/rss?channel=${encodeURIComponent(channelName)}`
+    );
     const data = await response.json();
 
     // log(`Fetched new posts: ${JSON.stringify(data)}`);
@@ -87,8 +87,10 @@ const fetchPosts = async () => {
     renderPosts(data.channel.item);
   } catch (error) {
     logError(`Error fetching RSS feed: ${error.message}`);
-    document.querySelector(".telegram-container").innerHTML =
-      "<p>Failed to load posts. Please try again later.</p>";
+    document.getElementById("container").style.display = "none";
+    document.getElementById("fallback").style.display = "block";
+    // document.querySelector(".telegram-container").innerHTML =
+    //   "<p>Failed to load posts. Please try again later.</p>";
   }
 };
 
